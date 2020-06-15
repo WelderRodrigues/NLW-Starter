@@ -14,7 +14,7 @@
 
   {% include 'partials/page-header.html' %}
 
-  <form action="">
+  <form action="/create-point" method="POST">
     <h1>Cadastro do ponto de coleta</h1>
 
     <fieldset>
@@ -67,34 +67,34 @@
         <span>Selecione um ou mais itens</span>
       </legend>
       <div class="items-grid">
-        <li data-id="1">
+        <li data-id="Lâmpadas">
           <img src="./assets/lampadas.svg" alt="Lâmpadas">
           <span>Lâmpadas</span>
         </li>
 
-        <li data-id="2">
-          <img src="./assets/lampadas.svg" alt="Lâmpadas">
-          <span>Lâmpadas</span>
+        <li data-id="Pilhas e Baterias">
+          <img src="./assets/baterias.svg" alt="Pilhas e Baterias">
+          <span>Pilhas e Baterias</span>
         </li>
 
-        <li data-id="3">
-          <img src="./assets/lampadas.svg" alt="Lâmpadas">
-          <span>Lâmpadas</span>
+        <li data-id="Papéis e Papelão">
+          <img src="./assets/papeis-papelao.svg" alt="Papéis e Papelão">
+          <span>Papéis e Papelão</span>
         </li>
 
-        <li data-id="4">
-          <img src="./assets/lampadas.svg" alt="Lâmpadas">
-          <span>Lâmpadas</span>
+        <li data-id="Resíduos eletronicos">
+          <img src="./assets/eletronicos.svg" alt="Resíduos eletronicos">
+          <span>Resíduos eletronicos</span>
         </li>
 
-        <li data-id="5">
-          <img src="./assets/lampadas.svg" alt="Lâmpadas">
-          <span>Lâmpadas</span>
+        <li data-id="Resíduos organicos">
+          <img src="./assets/organicos.svg" alt="Resíduos organicos">
+          <span>Resíduos organicos</span>
         </li>
 
-        <li data-id="6">
-          <img src="./assets/lampadas.svg" alt="Lâmpadas">
-          <span>Lâmpadas</span>
+        <li data-id="Óleo de cozinha">
+          <img src="./assets/oleo.svg" alt="Óleo de cozinha">
+          <span>Óleo de cozinha</span>
         </li>
       </div>
       <input type="hidden" name="items">
