@@ -45,19 +45,30 @@ server.post("/create-point", (request, response) => {
 
   function afterInsertData(error) {
     if (error) {
-      return console.log(error);
+      console.log(error);
+      return response.send('Erro no cadastro, tente novamente') 
     }
     console.log("Cadastrado com sucesso");
     console.log(this);
 
-    return response.send("Foi");
+    return response.render("create-point.html", {saved: true});
   }
 
   database.run(query, values, afterInsertData);
 });
 
 server.get("/search", (request, response) => {
-  database.all(`SELECT * FROM places`, (error, rows) => {
+
+  const search = request.query.search
+
+  if (search == ""){
+    return response.render("search-results.html", {
+      total: 0,
+    });
+
+  }
+
+  database.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, (error, rows) => {
     if (error) {
       return console.log(error);
     }
